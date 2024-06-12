@@ -91,7 +91,10 @@ function GetVehicleInformation(plate, cb)
 end
 
 function GetPlayerApartment(cid, cb)
-    local result =  MySQL.query.await('SELECT name, type, label FROM apartments where citizenid = ?', {cid})
+    --local result =  MySQL.query.await('SELECT name, type, label FROM apartments where citizenid = ?', {cid})
+    --  UPDATED INSTIGATE 12JULY2024 to reflect we are using qbx for apartments and it uses "propertied"
+    --
+    local result =  MySQL.query.await('SELECT property_name as name , "Apt" as type , "Apartment"" as label FROM properties where owner = ?', {cid})
     return result
 end
 
