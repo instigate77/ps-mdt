@@ -61,8 +61,10 @@ function GetBulletins(JobType)
 end
 
 function GetPlayerProperties(cid, cb)
-	local result =  MySQL.query.await('SELECT houselocations.label, houselocations.coords FROM player_houses INNER JOIN houselocations ON player_houses.house = houselocations.name where player_houses.citizenid = ?', {cid})
-	return result
+	--  UPDATED INSTIGATE 12JUL24 fix until we get housing setup ----
+	--local result =  MySQL.query.await('SELECT houselocations.label, houselocations.coords FROM player_houses INNER JOIN houselocations ON player_houses.house = houselocations.name where player_houses.citizenid = ?', {cid})
+	--return result
+	return nil
 end
 
 function GetPlayerDataById(id)
